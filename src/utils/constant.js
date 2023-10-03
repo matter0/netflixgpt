@@ -10,4 +10,13 @@ export const API_OPTION = {
     }
   };
   
-  export const VIDEO_URL ="";
+  export const IMG_CDN_URL ="https://image.tmdb.org/t/p/w500";
+
+  export const SUPPORTED_LANGUAGES =[
+    {Identifier :"en" ,name :"English"},
+    {Identifier :"hindi" ,name :"Hindi"},
+    {Identifier :"spanish" ,name :"Spanish"},
+
+  ]
+
+  export const OPENAI_KEY="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";

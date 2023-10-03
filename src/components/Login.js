@@ -10,7 +10,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { LOGO } from "../utils/constant";
+import { AVATAR_LOGO, LOGO } from "../utils/constant";
 export const Login = () => {
   const [isSignIn, setisSignIn] = useState();
   const [errorMessage, seterrorMessage] = useState();
@@ -35,7 +35,7 @@ export const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: "Pannaga",
-            photoURL: "https://avatars.githubusercontent.com/u/56064419?v=4",
+            photoURL: {AVATAR_LOGO},
           })
             .then(() => {
               console.log(user);
@@ -57,7 +57,7 @@ export const Login = () => {
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
+          
           const errorMessage = error.message;
           seterrorMessage(errorMessage);
           // ..
@@ -76,7 +76,7 @@ export const Login = () => {
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
+         
           const errorMessage = error.message;
           seterrorMessage(errorMessage + "Login failed");
         });
@@ -90,7 +90,7 @@ export const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={LOGO} />
+        <img src={LOGO} alt='img'/>
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
